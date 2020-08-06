@@ -1,4 +1,4 @@
-package com.test.base;
+package com.test.base.controller;
 
 import com.test.base.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.test.base;
+package com.test;
 
 import com.test.base.entity.User;
 import org.springframework.boot.SpringApplication;
