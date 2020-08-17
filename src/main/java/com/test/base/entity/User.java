@@ -1,6 +1,5 @@
 package com.test.base.entity;
 
-import org.springframework.context.annotation.Configuration;
 
 public class User {
     private String name;

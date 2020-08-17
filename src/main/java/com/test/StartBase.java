@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.concurrent.ThreadPoolExecutor;
+
 @SpringBootApplication
 public class StartBase {
 
@@ -22,6 +24,5 @@ public class StartBase {
     public User getUser() {
         return new User("杨胖", "58");
     }
-
 
 }
