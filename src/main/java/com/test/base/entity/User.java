@@ -1,6 +1,11 @@
 package com.test.base.entity;
 
+import org.springframework.stereotype.Component;
 
+/**
+ * 直接创建bean
+ */
+//@Component
 public class User {
     private String name;
     private String age;
@@ -26,11 +31,11 @@ public class User {
         this.age = age;
     }
 
-    public void init(){
+    public void init() {
         System.out.println("初始化");
     }
 
-    public void dis(){
+    public void dis() {
         System.out.println("销毁");
     }
 }

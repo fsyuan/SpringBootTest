@@ -1,6 +1,7 @@
 package com.test;
 
 import com.test.base.entity.User;
+import com.test.base.entity.UserFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,13 +17,25 @@ public class StartBase {
 
     /**
      * IOC 典型示例
+     * BEAN创建单例
      *
      * @return
      */
 
-    @Bean(initMethod = "init", destroyMethod = "dis")
+//    @Bean(initMethod = "init", destroyMethod = "dis")
     public User getUser() {
         return new User("杨胖", "58");
+
+    }
+
+    /**
+     * 静态工厂创建
+     *
+     * @return
+     */
+//    @Bean
+    public User getUserFromFactory() {
+        return UserFactory.createUser();
     }
 
 }
