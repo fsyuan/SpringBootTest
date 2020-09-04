@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.thy.dao.EmptMapper">
+    <!--    返回实体-->
+    <select id="queryEmpTList" resultType="com.thy.po.EmpT">
+        select e.empno,
+               e.ename,
+               e.job,
+               e.mgr,
+               e.hiredate,
+               e.sal,
+               e.comm,
+               e.deptno
+        FROM emp_t e
+    </select>
+    <!--返回自定义map-->
+    <select id="queryEmpTSalLevel" resultType="java.util.Map">
+        SELECT e.empno || 'haha' as ss,
+               e.empno,
+               CASE
+                   WHEN e.sal > 1000 THEN
+                       'Y'
+                   ELSE
+                       'N'
+                   END           AS sign_type,
+               e.job,
+               e.mgr,
+               e.hiredate,
+               e.sal,
+               e.comm,
+               e.deptno
+        FROM emp_t e
+    </select>
+</mapper>
