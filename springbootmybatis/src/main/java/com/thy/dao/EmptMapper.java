@@ -9,9 +9,9 @@ import java.util.Map;
 @Mapper
 public interface EmptMapper {
 
-    public List<EmpT> queryEmpTList();
+    public List<EmpT> queryEmpTList();//po
 
-    public List<Map<String, Object>> queryEmpTSalLevel();
+    public List<Map<String, Object>> queryEmpTSalLevel();//类似VO
 
 
 }

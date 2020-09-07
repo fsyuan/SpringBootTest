@@ -7,6 +7,5 @@ import java.util.Map;
 
 public interface EmpTService {
     List<EmpT> queryEmpT();
-
     List<Map<String, Object>> queryEmpTSalLevel();
 }

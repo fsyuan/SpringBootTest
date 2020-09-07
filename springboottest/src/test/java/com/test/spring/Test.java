@@ -14,11 +14,9 @@ public class Test {
         set.add(user);
         set.add(user2);
 
-
-
         for (Object o : set) {
             System.out.println(o);
         }
-
     }
+
 }

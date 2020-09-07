@@ -21,7 +21,6 @@ public class UserController {
     @ResponseBody
     public List<EmpT> queryEmpT() {
         List<EmpT> empTS = empTService.queryEmpT();
-
         return empTS;
     }
 
