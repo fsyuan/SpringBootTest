@@ -11,7 +11,7 @@ import org.springframework.cglib.proxy.Enhancer;
 
 import java.lang.reflect.Proxy;
 
-public class Admin {
+public class AdminProxy {
 
     @Test
     //不是用代理
