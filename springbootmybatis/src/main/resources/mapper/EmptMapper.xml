@@ -16,20 +16,31 @@
     </select>
     <!--返回自定义map-->
     <select id="queryEmpTSalLevel" resultType="java.util.Map">
-        SELECT e.empno || 'haha' as ss,
+        SELECT e.empno || 'haha'                 as ss,
                e.empno,
                CASE
                    WHEN e.sal > 1000 THEN
                        'Y'
                    ELSE
                        'N'
-                   END           AS sign_type,
+                   END                           AS sign_type,
                e.job,
                e.mgr,
-               e.hiredate,
+               to_char(e.hiredate, 'yyyy-mm-dd') as hiredate,
                e.sal,
                e.comm,
                e.deptno
         FROM emp_t e
     </select>
+    <insert id="insertEmp" parameterType="com.thy.po.EmpT">
+        insert into EMP_T T (T.COMM,
+                             T.DEPTNO,
+                             T.EMPNO,
+                             T.ENAME,
+                             T.HIREDATE, T.JOB, T.MGR, T.SAL)
+        VALUES (#{comm}, #{deptno}, #{empno}, #{ename}, to_date(#{hiredate}, 'yyyy-mm-dd'), #{job}, #{mgr}, #{sal})
+    </insert>
+    <delete id="deleteDeptno" parameterType="java.util.Map">
+        delete from dept_t t where t.DEPTNO = #{deptno}
+    </delete>
 </mapper>

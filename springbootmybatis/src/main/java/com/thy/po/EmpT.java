@@ -9,6 +9,16 @@ public class EmpT {
     private String sal;
     private String comm;
 
+    public String getDeptno() {
+        return deptno;
+    }
+
+    public void setDeptno(String deptno) {
+        this.deptno = deptno;
+    }
+
+    private String deptno;
+
     public String getEmpno() {
         return empno;
     }

@@ -9,8 +9,6 @@ import com.test.base.service.serviceImpl.AdminServiceImpl;
 import org.junit.Test;
 import org.springframework.cglib.proxy.Enhancer;
 
-import java.lang.reflect.Proxy;
-
 public class AdminProxy {
 
     @Test
@@ -26,8 +24,7 @@ public class AdminProxy {
     //jdk代理
     public void test() {
         JDKProxy jdkProxy = new JDKProxy(new AdminServiceImpl());
-        AdminService adminService = (AdminService) Proxy.newProxyInstance(jdkProxy.getClass().getClassLoader(),
-                AdminServiceImpl.class.getInterfaces(), jdkProxy);
+        AdminService adminService = (AdminService) jdkProxy.geProxy();
         adminService.find();
     }
 
@@ -41,10 +38,9 @@ public class AdminProxy {
     @Test
     //cglib代理,代理类
     public void test01() {
-        CGLABProxy cglabProxy = new CGLABProxy();
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(CGLIBService.class);
-        enhancer.setCallback(cglabProxy);
+        enhancer.setCallback(new CGLABProxy());
         CGLIBService cglibService = (CGLIBService) enhancer.create();
         cglibService.find();
     }

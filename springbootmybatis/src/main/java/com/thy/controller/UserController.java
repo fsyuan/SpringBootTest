@@ -29,6 +29,20 @@ public class UserController {
     public List<Map<String, Object>> queryEmpTSal() {
         return empTService.queryEmpTSalLevel();
     }
+
+    @RequestMapping("/insert")
+    @ResponseBody
+    public String insertEmp() {
+        empTService.insertEmp();
+        return "插入成功";
+    }
+
+    @RequestMapping("/deptno")
+    @ResponseBody
+    public String deleteDeptno() {
+        empTService.deleteDeptno();
+        return "删除成功";
+    }
 }
 
 

@@ -1,9 +1,8 @@
 package com.test.base.proxy;
 
-import com.test.base.service.AdminService;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * 动态代理实现过程
@@ -11,16 +10,21 @@ import java.lang.reflect.Method;
  */
 public class JDKProxy implements InvocationHandler {
 
-    private AdminService adminService;
+    private Object object;
 
-    public JDKProxy(AdminService adminService) {
-        this.adminService = adminService;
+    public JDKProxy(Object object) {
+        this.object = object;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("增强");
-        Object invoke = method.invoke(adminService, args);
+        Object invoke = method.invoke(object, args);
         return invoke;
     }
+
+    public Object geProxy() {
+        return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), object.getClass().getInterfaces(), this);
+    }
+
 }
