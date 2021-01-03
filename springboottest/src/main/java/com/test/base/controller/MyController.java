@@ -2,6 +2,7 @@ package com.test.base.controller;
 
 import com.test.base.entity.User;
 import com.test.base.entity.UserFactory;
+import com.test.base.service.MessageSend;
 import com.test.base.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,11 @@ public class MyController {
     @Autowired
     private UserService userService;
 
+
+    @Autowired
+    private MessageSend messageSend;
+
+
     @RequestMapping("/test")
     @ResponseBody
     public String quick() {
@@ -39,6 +45,13 @@ public class MyController {
         System.out.println("123123");
         return "热部署完成" + name + age;
     }
+
+    @RequestMapping("/send")
+    @ResponseBody
+    public String message() {
+        return messageSend.send("test") ;
+    }
+
 }
 
 
