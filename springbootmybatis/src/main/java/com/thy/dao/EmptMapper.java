@@ -11,6 +11,8 @@ public interface EmptMapper {
 
     public List<Map<String, Object>> queryEmpTSalLevel();//类似VO
 
+    public Map<String, Object> queryEmpTSalLevelMap();//返回map
+
     public void insertEmp(EmpT empT);
 
     public void deleteDeptno(Map map);

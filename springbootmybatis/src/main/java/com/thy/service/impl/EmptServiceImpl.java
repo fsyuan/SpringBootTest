@@ -29,6 +29,11 @@ public class EmptServiceImpl implements EmpTService {
         return emptMapper.queryEmpTSalLevel();
     }
 
+
+    public Map<String, Object> queryEmpTSalLevelMap() {
+        return emptMapper.queryEmpTSalLevelMap();
+    }
+
     @Override
     public void insertEmp() {
         EmpT empT1 = new EmpT();

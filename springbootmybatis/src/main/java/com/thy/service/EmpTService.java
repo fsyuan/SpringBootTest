@@ -10,6 +10,8 @@ public interface EmpTService {
 
     List<Map<String, Object>> queryEmpTSalLevel();
 
+    Map<String, Object> queryEmpTSalLevelMap();
+
     void insertEmp();
 
     void deleteDeptno();

@@ -11,6 +11,7 @@
     <modules>
         <module>springbootmybatis</module>
         <module>springboottest</module>
+        <module>springbootstudy</module>
     </modules>
 
     <!--    限定版本-->
@@ -19,7 +20,6 @@
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <oracle.version>11.2.0.3</oracle.version>
         <druid.version>1.1.10</druid.version>
-
     </properties>
 
     <!--导入了一个boot启动包-->
@@ -48,5 +48,17 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
 </project>

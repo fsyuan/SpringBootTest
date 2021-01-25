@@ -17,6 +17,11 @@ public class UserController {
     @Autowired
     private EmpTService empTService;
 
+    /**
+     * 返回实体,可能为null，返回的是一个json对象
+     *
+     * @return
+     */
     @RequestMapping("/emp")
     @ResponseBody
     public List<EmpT> queryEmpT() {
@@ -24,10 +29,26 @@ public class UserController {
         return empTS;
     }
 
+    /**
+     * 返回Linux size为0
+     *
+     * @return
+     */
     @RequestMapping("/empSal")
     @ResponseBody
     public List<Map<String, Object>> queryEmpTSal() {
         return empTService.queryEmpTSalLevel();
+    }
+
+    /**
+     * 返回Map,只返回单行json 不是一个数组
+     *
+     * @return
+     */
+    @RequestMapping("/empSalMap")
+    @ResponseBody
+    public Map<String, Object> queryEmpTSalMap() {
+        return empTService.queryEmpTSalLevelMap();
     }
 
     @RequestMapping("/insert")
