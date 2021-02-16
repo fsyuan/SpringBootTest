@@ -19,7 +19,7 @@ public class UserController {
 
     /**
      * 返回实体,可能为null，返回的是一个json对象
-     *
+     * 大萨达撒
      * @return
      */
     @RequestMapping("/emp")
@@ -51,7 +51,7 @@ public class UserController {
         return empTService.queryEmpTSalLevelMap();
     }
 
-    @RequestMapping("/insert")
+    @RequestMapping("/insedddrtsss")
     @ResponseBody
     public String insertEmp() {
         empTService.insertEmp();
